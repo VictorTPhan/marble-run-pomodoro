@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marble Run Pomodoro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo">
+          <div class="logo-ball"></div>
+        </div>
+        <h1>Marble Run <span>Pomodoro</span></h1>
+      </div>
+    </header>
+
+    <main class="layout">
+
+      <section class="run-panel">
+        <div class="run-hud">
+          <span id="ballsHud">Marbles: 0</span>
+          <span id="nextHud">Next marble in: --:--</span>
+          <span id="stateTag"></span>
+        </div>
+        <div class="run-wrap">
+          <div class="run-grid" id="run"></div>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="card timer-card mode-focus" id="timerCard">
+          <div class="tabs">
+            <button class="tab active" data-mode="focus" type="button">Focus</button>
+            <button class="tab" data-mode="short" type="button">Short</button>
+            <button class="tab" data-mode="long" type="button">Long</button>
+          </div>
+
+          <div class="dial">
+            <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+              <circle class="ring-bg" cx="100" cy="100" r="86"></circle>
+              <circle class="ring-fg" id="ringFg" cx="100" cy="100" r="86"></circle>
+            </svg>
+            <div class="time" id="time">25:00</div>
+            <div class="time-caption" id="timeCaption">Focus</div>
+          </div>
+
+          <div class="sessions" id="sessions"></div>
+
+          <div class="controls">
+            <button class="btn primary" id="startBtn" type="button">Start</button>
+            <button class="btn" id="skipBtn" type="button">Skip</button>
+            <button class="btn" id="resetBtn" type="button">Restart</button>
+          </div>
+
+          <div class="settings">
+            <label>Focus <input id="inFocus" type="number" min="1" max="120" value="25"></label>
+            <label>Short <input id="inShort" type="number" min="1" max="60" value="5"></label>
+            <label>Long <input id="inLong" type="number" min="1" max="120" value="15"></label>
+            <label>Rounds <input id="inRounds" type="number" min="1" max="12" value="4"></label>
+          </div>
+          <label class="check">
+            <input id="autoStart" type="checkbox" checked>
+            Auto-start the next session
+          </label>
+        </div>
+      </aside>
+    </main>
+
+  </div>
+
+  <script src="js/tiles.js"></script>
+  <script src="js/generator.js"></script>
+  <script src="js/marble.js"></script>
+  <script src="js/pomodoro.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
